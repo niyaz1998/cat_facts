@@ -17,7 +17,6 @@ class CatFactsBloc extends Bloc<CatFactsEvent, CatFactsState> {
       emit(CatFactsLoadingState());
       try {
         var catFacts = await catFactsRepository.fetchCatFacts();
-        throw '';
         emit(CatFactsLoadedState(catFacts));
       } catch (e, s) {
         print(e);
